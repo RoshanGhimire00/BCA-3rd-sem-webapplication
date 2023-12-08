@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Retrieval</title>
+</head>
+<body>
+    <h1>User Information Retrieval</h1>
+    <label for="userId">Enter User ID:</label>
+    <input type="text" id="userId">
+    <button onclick="getUserInfo()">Get User Info</button>
+
+    <div id="userInfo">
+        <!-- User information will be displayed here -->
+    </div>
+
+    <script>
+        function getUserInfo() {
+            const userId = document.getElementById("userId").value;
+
+            // Create a new XMLHttpRequest object to fetch the XML file
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const xmlString = xhr.responseText;
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlString, "Project_06/xml");
+
+                    // Find the user element with the given ID
+                    const users = xmlDoc.getElementsByTagName("user");
+                    let userInfo = "User not found";
+
+                    for (let i = 0; i < users.length; i++) {
+                        const id = users[i].getElementsByTagName("id")[0].textContent;
+                        const name = users[i].getElementsByTagName("name")[0].textContent;
+                        const email = users[i].getElementsByTagName("email")[0].textContent;
+                        const age = users[i].getElementsByTagName("age")[0].textContent;
+
+
+                        if (id === userId) {
+                            userInfo = `User ID: ${id}<br>Name: ${name}<br>Email: ${email}<br>age:${age}`;
+                            break;
+                        }
+                    }
+
+                    document.getElementById("userInfo").innerHTML = userInfo;
+                }
+            };
+
+            xhr.open("GET", "Project.06.xml", true);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

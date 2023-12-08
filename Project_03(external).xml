@@ -1,0 +1,7 @@
+<!DOCTYPE Library[
+<!ELEMENT Library (book)>
+<!ELEMENT book (Name,writer,price)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT writer (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+]>

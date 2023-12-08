@@ -1,0 +1,21 @@
+body{
+    background-color: blue;
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    display:block;
+}
+nav{
+    overflow: hidden;
+    background-color: red;
+    padding: 10px;
+}
+nav a{
+    text-decoration: none;
+    padding:15px;
+}
+p{
+    margin-top: 10px;
+    margin-left: 80px;
+}
+

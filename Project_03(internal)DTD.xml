@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF=8"?>
+<!DOCTYPE student[
+<!ELEMENT student (class)>
+<!ELEMENT class (Name,code.no,phonenumber)>
+<!ELEMENT Names (#PCDATA)>
+<!ELEMENT code.no (#PCDATA)>
+<!ELEMENT phonenumber (#PCDATA)>
+]>
+<student>
+ <class>
+   <Name>Roshan Ghimire</Name>
+   <code.no>3278606</code.no>
+   <phonenumber>9842676002</phonenumber>
+ </class>
+ <class>
+   <Name>Harilal Bastola</Name>
+   <code.no>3277756</code.no>
+   <phonenumber>9845612378</phonenumber>
+ </class>
+ <class>
+   <Name>Rameshwor yadav</Name>
+   <code.no>3277956</code.no>
+   <phonenumber>9845612378</phonenumber>
+ </class>
+ <class>
+   <Name>Sita Ghimire</Name>
+   <code.no>3277756</code.no>
+   <phonenumber>9845612378</phonenumber>
+ </class>
+</student>

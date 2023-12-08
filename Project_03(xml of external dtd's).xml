@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "external dtd's-02">
+<library>
+ <book>
+   <Name>Seto Dharti</Name>
+   <writer>Amar Neupane</writer>
+   <price>1050</price>
+ </book>
+  <book>
+   <Name>Radha</Name>
+   <writer>Krishna Dharabasi</writer>
+   <price>1500</price>
+ </book>
+  <book>
+   <Name>Jiwan Kada Ki Phool </Name>
+   <writer>Jhamak Kumari Ghimire</writer>
+   <price>1200</price>
+ </book>
+</library>

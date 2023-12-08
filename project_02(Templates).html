@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>templates</title>
+</head>
+<body>
+    <div class="topic">
+    <h1>Welcome to the hotel.</h1>
+   <pre>
+    New-Baneshwor, kathmandu Nepal.
+    </pre>
+</div>
+    <div class="Boxesbox">
+    <div class="box" id="box1">relative <h1>Welcome to</h1></div>
+    <div class="box" id="box2">fixed &#128526 <h1>CCTV</h1></div> 
+    <div class="box" id="box3">absolute <h1>5 star hotel</h1></div>
+</div>
+</body>
+</html>
+<style>
+   .topic{
+    text-align: center;
+   }
+    .Boxesbox{
+        border: 2px solid brown;
+        background-color: crimson;
+        height: 1080px;
+
+
+    }
+    body{
+        background-color: burlywood;
+    }
+    .box{
+        text-align: center;
+        font-weight: bold;
+        font-size: 20;
+        font-family: 'Times New Roman', Times, serif;
+        display: inline-block;
+        border: 3px solid black;
+        width: 200px;
+        height:180px;
+        padding: 10px;
+       
+    
+    }
+   #box1:hover{
+        position: relative; /*change its own properties*/
+        top: 220px;*/ 
+        width: 90px;
+        height:80px ;
+    }
+    #box2{
+        position: fixed;
+        left: 800px;
+        top: 120px;
+    }
+    #box3:hover{
+        position: absolute;
+       
+    }
+</style>

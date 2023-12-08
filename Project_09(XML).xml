@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+  <employee id="101">
+    <personalInformation>
+        <name>
+        <firstname>Roshan</firstname>
+        <lastname>Ghimire</lastname>
+        </name>
+        <gender>Male</gender>
+        <dob>2060-04-15</dob>
+    </personalInformation>
+    <contactInformation>
+       <email>ghimireroshan1234@gmail.com</email>
+       <phone>
+         <mobile>9842676002</mobile>
+         <office>023565765</office>
+       </phone>
+    </contactInformation>
+    <department id="IT">
+       <name>Information Technology</name>
+       <location>Building A</location>
+    </department>
+    <salary currency="NRS">100000</salary>
+</employee> 
+</employees>

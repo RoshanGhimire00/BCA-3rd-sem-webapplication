@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Selector</title>
+</head>
+<body>
+    <h1>Location Selector</h1>
+
+    <form>
+        <label for="country">Country:</label>
+        <select id="country" onchange="populateStates()">
+            <option value="nepal">Nepal</option>
+            <option value="china">China</option>
+            <option value="india">India</option>
+            <option value="bhutan">Bhutan</option>
+            <option value="pakistan">Pakistan</option>
+            <!-- Add more countries here -->
+        </select>
+
+        <label for="state">State:</label>
+        <select id="state" onchange="populateDistricts()">
+            <option value="province1">Koshi</option>
+            <option value="province2">Saptakoshi</option>
+            <option value="province3">Bagmati</option>
+            <option value="province4">karnali</option>
+            <option value="province5">Sagarmatha</option>
+            <option value="province6">Mahakali</option>
+            <option value="province7">Sudhurpachim</option>
+            <!-- State options will be populated dynamically -->
+        </select>
+
+        <label for="district">District:</label>
+        <select id="district" onchange="populateCities()">
+            <!-- District options will be populated dynamically -->
+        </select>
+
+        <label for="city">City:</label>
+        <select id="city">
+            <!-- City options will be populated dynamically -->
+        </select>
+    </form>
+
+    <script>
+        const countrySelect = document.getElementById("country");
+        const stateSelect = document.getElementById("state");
+        const districtSelect = document.getElementById("district");
+        const citySelect = document.getElementById("city");
+
+        // Define your data structure here (e.g., an object with countries, states, districts, and cities)
+
+        const data = {
+            nepal: {
+                province1: {
+                   
+                },
+                province2: {
+                  
+                },
+                province3:{
+
+                },
+                province4:{
+
+                },
+                province5:{
+
+                },
+                province6:{
+
+                },
+                province7:{
+
+                }
+            },
+            china: {
+                ontario: {
+                    toronto: ["Toronto", "Mississauga", "Brampton"],
+                    ottawa: ["Ottawa", "Kanata", "Nepean"],
+                },
+                quebec: {
+                    montreal: ["Montreal", "Laval", "Longueuil"],
+                    quebeccity: ["Quebec City", "Levis", "Sherbrooke"],
+                },
+            },
+            // Add more data as needed
+        };
+
+        // Function to populate states based on selected country
+        function populateStates() {
+            const selectedCountry = countrySelect.value;
+            stateSelect.innerHTML = "";
+            districtSelect.innerHTML = "";
+            citySelect.innerHTML = "";
+
+            for (const state in data[selectedCountry]) {
+                const option = document.createElement("option");
+                option.value = state;
+                option.text = state;
+                stateSelect.appendChild(option);
+            }
+        }
+
+        // Function to populate districts based on selected state
+        function populateDistricts() {
+            const selectedCountry = countrySelect.value;
+            const selectedState = stateSelect.value;
+            districtSelect.innerHTML = "";
+            citySelect.innerHTML = "";
+
+            for (const district in data[selectedCountry][selectedState]) {
+                const option = document.createElement("option");
+                option.value = district;
+                option.text = district;
+                districtSelect.appendChild(option);
+            }
+        }
+
+        // Function to populate cities based on selected district
+        function populateCities() {
+            const selectedCountry = countrySelect.value;
+            const selectedState = stateSelect.value;
+            const selectedDistrict = districtSelect.value;
+            citySelect.innerHTML = "";
+
+            for (const city of data[selectedCountry][selectedState][selectedDistrict]) {
+                const option = document.createElement("option");
+                option.value = city;
+                option.text = city;
+                citySelect.appendChild(option);
+            }
+        }
+
+        // Initial population of states
+        populateStates();
+    </script>
+</body>
+</html>
